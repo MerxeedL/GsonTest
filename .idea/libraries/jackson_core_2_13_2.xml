@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="jackson-core-2.13.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/jackson-core-2.13.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jackson-annotations-2.13.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jackson-databind-2.13.2.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jackson-dataformat-xml-2.13.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jackson-dataformat-yaml-2.13.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/stax2-api-4.2.1.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/woodstox-core-6.2.8.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/snakeyaml-1.30.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
