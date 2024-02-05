@@ -97,7 +97,7 @@ public class Main {
             writer.write(result + " - difference between average price and median\n");
             writer.close();
         } catch (IOException e) {
-            System.out.println("Oshibka");
+            System.out.println("Warning with adding in a file");
         }
 
 
