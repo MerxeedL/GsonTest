@@ -37,7 +37,7 @@ public class Main {
                                  .filter(d -> d.getDestination().equals("TLV"))
                                  .map(Ticket::getDifferentTime)
                                  .min(Comparator.naturalOrder())
-                                 .get() + " minutes\n");
+                                 .orElse(null) + " minutes\n");
             writer.write("----------------\n");
 
             writer.write("Carrier: S7\n");
@@ -47,7 +47,7 @@ public class Main {
                                  .filter(d -> d.getDestination().equals("TLV"))
                                  .map(Ticket::getDifferentTime)
                                  .min(Comparator.naturalOrder())
-                                 .get() + " minutes\n");
+                                 .orElse(null) + " minutes\n");
             writer.write("----------------\n");
 
             writer.write("Carrier: SU\n");
@@ -57,7 +57,7 @@ public class Main {
                                  .filter(d -> d.getDestination().equals("TLV"))
                                  .map(Ticket::getDifferentTime)
                                  .min(Comparator.naturalOrder())
-                                 .get() + " minutes\n");
+                                 .orElse(null) + " minutes\n");
             writer.write("----------------\n");
 
             writer.write("Carrier: BA\n");
@@ -67,7 +67,7 @@ public class Main {
                                  .filter(d -> d.getDestination().equals("TLV"))
                                  .map(Ticket::getDifferentTime)
                                  .min(Comparator.naturalOrder())
-                                 .get() + " minutes\n");
+                                 .orElse(null) + " minutes\n");
             writer.write("----------------\n");
 
             List<Integer> listPrices = listTickets.stream()
