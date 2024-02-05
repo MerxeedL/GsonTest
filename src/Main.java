@@ -9,9 +9,9 @@ import java.util.stream.Collectors;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         try {
-            FileWriter writer = new FileWriter("src//FileForWrite.txt", true);
+            FileWriter writer = new FileWriter("src//FileForWrite", true);
 
             StringBuilder sb = new StringBuilder();
             double median;
@@ -97,7 +97,5 @@ public class Main {
         } catch (IOException e) {
             System.out.println("Warning with adding in a file");
         }
-
-
     }
 }
