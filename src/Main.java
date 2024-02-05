@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         try {
-            FileWriter writer = new FileWriter("src//FileForWrite.txt", false);
+            FileWriter writer = new FileWriter("src//FileForWrite.txt", true);
 
             StringBuilder sb = new StringBuilder();
             double median;
@@ -32,42 +32,42 @@ public class Main {
 
             writer.write("Carrier: TK\n");
             writer.write(listTickets.stream()
-                                       .filter(c -> c.getCarrier().equals("TK"))
-                                       .filter(o -> o.getOrigin().equals("VVO"))
-                                       .filter(d -> d.getDestination().equals("TLV"))
-                                       .map(Ticket::getDifferentTime)
-                                       .min(Comparator.naturalOrder())
-                                       .get() + " minutes\n");
+                                 .filter(c -> c.getCarrier().equals("TK"))
+                                 .filter(o -> o.getOrigin().equals("VVO"))
+                                 .filter(d -> d.getDestination().equals("TLV"))
+                                 .map(Ticket::getDifferentTime)
+                                 .min(Comparator.naturalOrder())
+                                 .get() + " minutes\n");
             writer.write("----------------\n");
 
             writer.write("Carrier: S7\n");
             writer.write(listTickets.stream()
-                                       .filter(c -> c.getCarrier().equals("S7"))
-                                       .filter(o -> o.getOrigin().equals("VVO"))
-                                       .filter(d -> d.getDestination().equals("TLV"))
-                                       .map(Ticket::getDifferentTime)
-                                       .min(Comparator.naturalOrder())
-                                       .get() + " minutes\n");
+                                 .filter(c -> c.getCarrier().equals("S7"))
+                                 .filter(o -> o.getOrigin().equals("VVO"))
+                                 .filter(d -> d.getDestination().equals("TLV"))
+                                 .map(Ticket::getDifferentTime)
+                                 .min(Comparator.naturalOrder())
+                                 .get() + " minutes\n");
             writer.write("----------------\n");
 
             writer.write("Carrier: SU\n");
             writer.write(listTickets.stream()
-                                       .filter(c -> c.getCarrier().equals("SU"))
-                                       .filter(o -> o.getOrigin().equals("VVO"))
-                                       .filter(d -> d.getDestination().equals("TLV"))
-                                       .map(Ticket::getDifferentTime)
-                                       .min(Comparator.naturalOrder())
-                                       .get() + " minutes\n");
+                                 .filter(c -> c.getCarrier().equals("SU"))
+                                 .filter(o -> o.getOrigin().equals("VVO"))
+                                 .filter(d -> d.getDestination().equals("TLV"))
+                                 .map(Ticket::getDifferentTime)
+                                 .min(Comparator.naturalOrder())
+                                 .get() + " minutes\n");
             writer.write("----------------\n");
 
             writer.write("Carrier: BA\n");
             writer.write(listTickets.stream()
-                                       .filter(c -> c.getCarrier().equals("BA"))
-                                       .filter(o -> o.getOrigin().equals("VVO"))
-                                       .filter(d -> d.getDestination().equals("TLV"))
-                                       .map(Ticket::getDifferentTime)
-                                       .min(Comparator.naturalOrder())
-                                       .get() + " minutes\n");
+                                 .filter(c -> c.getCarrier().equals("BA"))
+                                 .filter(o -> o.getOrigin().equals("VVO"))
+                                 .filter(d -> d.getDestination().equals("TLV"))
+                                 .map(Ticket::getDifferentTime)
+                                 .min(Comparator.naturalOrder())
+                                 .get() + " minutes\n");
             writer.write("----------------\n");
 
             List<Integer> listPrices = listTickets.stream()
@@ -84,12 +84,10 @@ public class Main {
             writer.write(avg.getAsDouble() + " - average price\n");
             double average = avg.getAsDouble();
 
-            int size = listPrices.size();
-
-            if (size % 2 == 0) {
-                median = (listPrices.get(size / 2 - 1) + listPrices.get(size / 2)) / 2.0;
+            if (listPrices.size() % 2 == 0) {
+                median = (listPrices.get(listPrices.size() / 2 - 1) + listPrices.get(listPrices.size() / 2)) / 2.0;
             } else {
-                median = listPrices.get(size / 2);
+                median = listPrices.get(listPrices.size() / 2);
             }
             writer.write(median + " - median price\n");
             double result = average - median;

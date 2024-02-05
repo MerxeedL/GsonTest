@@ -1,6 +1,5 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 class Ticket {
@@ -126,25 +125,18 @@ class Ticket {
                '}';
     }
 
-    public int getDifferentTime(){
+    public int getDifferentTime() {
         Date dt = null;
         Date at = null;
         try {
-            dt = new SimpleDateFormat("hh:mm").parse(departure_time);
-            at = new SimpleDateFormat("hh:mm").parse(arrival_time);
+            dt = new SimpleDateFormat("HH:mm").parse(departure_time);
+            at = new SimpleDateFormat("HH:mm").parse(arrival_time);
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
 
         long milliseconds = at.getTime() - dt.getTime();
-        int minutes = (int)(milliseconds/(60*1000));
 
-        return minutes;
+        return (int) (milliseconds / (60 * 1000));
     }
-
-    public int getMedian() {
-
-        return price;
-    }
-
 }
